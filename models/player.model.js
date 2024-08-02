@@ -1,9 +1,11 @@
 import mongoose, { model } from "mongoose";
-const userSchema = mongoose.Schema(
+const Schema = mongoose.Schema;
+
+const playerSchema = new Schema(
   {
     name: {
       type: String,
-      required: [true, "Please enter user name"],
+      required: [true, "Please enter player name"],
     },
     email: {
       type: String,
@@ -28,6 +30,7 @@ const userSchema = mongoose.Schema(
     timestamps: true,
   }
 );
-const user = mongoose.model("user", userSchema);
 
-export default user;
+const player = mongoose.model("player", playerSchema);
+
+export default player;

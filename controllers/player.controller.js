@@ -1,23 +1,23 @@
-import user from "../models/users.model.js";
+import player from "../models/player.model.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 import hashPassword from "../utils/hashPassword.js";
 
-//post product
-const userController = {
+//post Player
+const playerController = {
   Register: async (req, res) => {
     try {
       const { name, email, password, address } = req.body;
 
-      // Check if user already exists
-      const existingUser = await user.findOne({ email });
-      if (existingUser) {
-        return res.status(409).json({ message: "User already exists" });
+      // Check if Player already exists
+      const existingPlayer = await player.findOne({ email });
+      if (existingPlayer) {
+        return res.status(409).json({ message: "Player already exists" });
       }
       const hashedPassword = await hashPassword(password);
 
-      const users = await user.create({ name, email, password: hashedPassword, address });
-      res.status(200).json({ message: "User has been created successfully", user: users });
+      const players = await player.create({ name, email, password: hashedPassword, address });
+      res.status(200).json({ message: "Player has been created successfully", player: players });
     } catch (err) {
       res.status(500).send(err.message);
     }
@@ -32,23 +32,23 @@ const userController = {
         return res.status(400).json({ message: "Email and password are required" });
       }
 
-      // Find user
-      const users = await user.findOne({ email }).select("+password");
+      // Find player
+      const players = await player.findOne({ email }).select("+password");
 
-      if (!users) {
-        return res.status(401).json({ message: "no user found" });
+      if (!players) {
+        return res.status(401).json({ message: "no player found" });
       }
-      console.log(users);
+      console.log(players);
 
       // Check password
 
-      const isMatch = await bcrypt.compare(password, users.password);
+      const isMatch = await bcrypt.compare(password, players.password);
       if (!isMatch) {
         return res.status(401).json({ message: "Invalid credentials" });
       }
 
       // Generate JWT
-      const token = jwt.sign({ id: user.id }, process.env.TOKEN_ACCESS_SECRET, { expiresIn: "1h" });
+      const token = jwt.sign({ id: player.id }, process.env.TOKEN_ACCESS_SECRET, { expiresIn: "1h" });
 
       // Set cookie
       res.cookie("token", token, {
@@ -58,7 +58,7 @@ const userController = {
         maxAge: 3600000, // 1 hour
       });
 
-      res.json({ message: "Login successful", userId: user.id });
+      res.json({ message: "Login successful", playerId: player.id });
     } catch (error) {
       console.error("Login error:", error);
       res.status(500).json({ message: "Internal server error" });
@@ -75,4 +75,4 @@ const userController = {
     }
   },
 };
-export default userController;
+export default playerController;
