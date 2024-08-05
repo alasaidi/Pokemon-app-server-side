@@ -34,12 +34,16 @@ const playerController = {
 
       // Find player
       const players = await player.findOne({ email }).select("+password");
+      console.log("Player query result:", players);
 
       if (!players) {
         return res.status(401).json({ message: "no player found" });
       }
       console.log(players);
-
+      if (!players._id) {
+        console.error("Player object does not have an _id property:", players);
+        return res.status(500).json({ message: "Server error: Invalid player data" });
+      }
       // Check password
 
       const isMatch = await bcrypt.compare(password, players.password);
@@ -48,8 +52,8 @@ const playerController = {
       }
 
       // Generate JWT
-      const token = jwt.sign({ id: player.id }, process.env.TOKEN_ACCESS_SECRET, { expiresIn: "1h" });
-
+      const token = jwt.sign({ id: players._id.toString() }, process.env.TOKEN_ACCESS_SECRET, { expiresIn: "1h" });
+      console.log("Generated token payload:", { id: players._id.toString() });
       // Set cookie
       res.cookie("token", token, {
         httpOnly: true,
@@ -58,7 +62,7 @@ const playerController = {
         maxAge: 3600000, // 1 hour
       });
 
-      res.json({ message: "Login successful", playerId: player.id });
+      res.json({ message: "Login successful", playerId: players._id });
     } catch (error) {
       console.error("Login error:", error);
       res.status(500).json({ message: "Internal server error" });

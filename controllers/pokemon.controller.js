@@ -1,5 +1,5 @@
 import pokemon from "../models/pokemon.model.js";
-
+import playerPokemon from "../models/playerPokemon.model.js";
 //post pokemon
 const pokemonController = {
   postpokemons: async (req, res) => {
@@ -47,11 +47,19 @@ const pokemonController = {
   // get all pokemons
   selectAllpokemons: async (req, res) => {
     try {
-      const pokemons = await pokemon.find({});
-
-      res.status(200).json(pokemons);
+      if (req.user) {
+        // User is logged in, get their Pokémon
+        console.log("Entire req.user object:", req.user);
+        console.log("User ID:", req.user.id);
+        const playerPokemons = await playerPokemon.find({ playerId: req.user.id }).populate("pokemonId");
+        res.status(200).json(playerPokemons);
+      } else {
+        // No user logged in, get all Pokémon
+        const allPokemon = await pokemon.find();
+        res.status(200).json(allPokemon);
+      }
     } catch (err) {
-      res.status(500).send(err.message);
+      res.status(500).json({ message: err.message });
     }
   },
   // get pokemon by id
