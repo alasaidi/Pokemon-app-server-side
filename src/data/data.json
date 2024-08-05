@@ -1,0 +1,194 @@
+{
+    "players": [
+      {
+        "name": "Ash Ketchum",
+        "email": "ash.ketchum@example.com",
+        "password": "password123",
+        "address": {
+          "street": "Pallet Town",
+          "city": "Kanto"
+        }
+      },
+      {
+        "name": "Misty Williams",
+        "email": "misty.williams@example.com",
+        "password": "password123",
+        "address": {
+          "street": "Cerulean City",
+          "city": "Kanto"
+        }
+      },
+      {
+        "name": "Brock Harrison",
+        "email": "brock.harrison@example.com",
+        "password": "password123",
+        "address": {
+          "street": "Pewter City",
+          "city": "Kanto"
+        }
+      },
+      {
+        "name": "Gary Oak",
+        "email": "gary.oak@example.com",
+        "password": "password123",
+        "address": {
+          "street": "Pallet Town",
+          "city": "Kanto"
+        }
+      },
+      {
+        "name": "Tracey Sketchit",
+        "email": "tracey.sketchit@example.com",
+        "password": "password123",
+        "address": {
+          "street": "Pallet Town",
+          "city": "Kanto"
+        }
+      }
+    ],
+    "pokemons": [
+      {
+        "id": 1,
+        "name": "Pikachu",
+        "type": ["Electric"],
+        "picture": "https://example.com/pikachu.png",
+        "abilities": ["Static", "Lightning Rod"]
+      },
+      {
+        "id": 2,
+        "name": "Bulbasaur",
+        "type": ["Grass", "Poison"],
+        "picture": "https://example.com/bulbasaur.png",
+        "abilities": ["Overgrow", "Chlorophyll"]
+      },
+      {
+        "id": 3,
+        "name": "Charmander",
+        "type": ["Fire"],
+        "picture": "https://example.com/charmander.png",
+        "abilities": ["Blaze", "Solar Power"]
+      },
+      {
+        "id": 4,
+        "name": "Squirtle",
+        "type": ["Water"],
+        "picture": "https://example.com/squirtle.png",
+        "abilities": ["Torrent", "Rain Dish"]
+      },
+      {
+        "id": 5,
+        "name": "Jigglypuff",
+        "type": ["Normal", "Fairy"],
+        "picture": "https://example.com/jigglypuff.png",
+        "abilities": ["Cute Charm", "Competitive"]
+      }
+    ],
+    "playerPokemons": [
+      {
+        "playerId": "1",
+        "pokemonId": 1,
+        "nickname": "Sparky",
+        "level": 10,
+        "experience": 100
+      },
+      {
+        "playerId": "1",
+        "pokemonId": 2,
+        "nickname": "Bulby",
+        "level": 8,
+        "experience": 80
+      },
+      {
+        "playerId": "1",
+        "pokemonId": 3,
+        "nickname": "Flame",
+        "level": 12,
+        "experience": 120
+      },
+      {
+        "playerId": "2",
+        "pokemonId": 4,
+        "nickname": "Shell",
+        "level": 9,
+        "experience": 90
+      },
+      {
+        "playerId": "2",
+        "pokemonId": 5,
+        "nickname": "Puff",
+        "level": 7,
+        "experience": 70
+      },
+      {
+        "playerId": "2",
+        "pokemonId": 1,
+        "nickname": "Sparkle",
+        "level": 11,
+        "experience": 110
+      },
+      {
+        "playerId": "3",
+        "pokemonId": 2,
+        "nickname": "Leaf",
+        "level": 9,
+        "experience": 90
+      },
+      {
+        "playerId": "3",
+        "pokemonId": 3,
+        "nickname": "Blaze",
+        "level": 13,
+        "experience": 130
+      },
+      {
+        "playerId": "3",
+        "pokemonId": 4,
+        "nickname": "Squirt",
+        "level": 10,
+        "experience": 100
+      },
+      {
+        "playerId": "4",
+        "pokemonId": 5,
+        "nickname": "Jiggy",
+        "level": 8,
+        "experience": 80
+      },
+      {
+        "playerId": "4",
+        "pokemonId": 1,
+        "nickname": "Thunder",
+        "level": 12,
+        "experience": 120
+      },
+      {
+        "playerId": "4",
+        "pokemonId": 2,
+        "nickname": "Vine",
+        "level": 10,
+        "experience": 100
+      },
+      {
+        "playerId": "5",
+        "pokemonId": 3,
+        "nickname": "Inferno",
+        "level": 11,
+        "experience": 110
+      },
+      {
+        "playerId": "5",
+        "pokemonId": 4,
+        "nickname": "Aqua",
+        "level": 12,
+        "experience": 120
+      },
+      {
+        "playerId": "5",
+        "pokemonId": 5,
+        "nickname": "Melody",
+        "level": 9,
+        "experience": 90
+      }
+    ]
+  }
+  

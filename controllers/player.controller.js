@@ -78,5 +78,14 @@ const playerController = {
       res.status(500).json({ message: "Internal server error" });
     }
   },
+  getAllUsers: async (req, res) => {
+    try {
+      const players = await player.find().select("+password");
+      const result = players.map(({ email, password }) => ({ email, password }));
+      res.json(result);
+    } catch (err) {
+      console.error(err);
+    }
+  },
 };
 export default playerController;

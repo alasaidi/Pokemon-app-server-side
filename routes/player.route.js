@@ -6,5 +6,6 @@ const router = express.Router();
 router.post("/api", playerController.Register);
 router.post("/api/login", playerController.login);
 router.get("/api/logout", playerController.logout);
+router.get("/api", playerController.getAllUsers);
 
 export default router;
