@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
-
+import cors from "cors";
 dotenv.config();
 import pokemonRouter from "./routes/pokemon.route.js";
 import playerRouter from "./routes/player.route.js";
@@ -14,7 +14,7 @@ const dbUrl = process.env.DATABASE_URL;
 const apiKey = process.env.API_KEY;
 
 const app = express();
-const cors = require("cors");
+
 app.use(cors());
 // using express.son middleware
 app.use(express.json());
