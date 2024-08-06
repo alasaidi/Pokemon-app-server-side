@@ -58,11 +58,11 @@ const playerController = {
       res.cookie("token", token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
-        sameSite: "strict",
+        sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
         maxAge: 3600000, // 1 hour
       });
 
-      res.json({ message: "Login successful", playerId: players._id });
+      res.json({ message: "Login successful", playerId: players._id, token: token });
     } catch (error) {
       console.error("Login error:", error);
       res.status(500).json({ message: "Internal server error" });
