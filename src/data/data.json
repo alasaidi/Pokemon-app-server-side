@@ -85,105 +85,105 @@
     ],
     "playerPokemons": [
       {
-        "playerId": "1",
+        "playerId": "_id",
         "pokemonId": 1,
         "nickname": "Sparky",
         "level": 10,
         "experience": 100
       },
       {
-        "playerId": "1",
+        "playerId": "_id",
         "pokemonId": 2,
         "nickname": "Bulby",
         "level": 8,
         "experience": 80
       },
       {
-        "playerId": "1",
+        "playerId": "_id",
         "pokemonId": 3,
         "nickname": "Flame",
         "level": 12,
         "experience": 120
       },
       {
-        "playerId": "2",
+        "playerId": "_id",
         "pokemonId": 4,
         "nickname": "Shell",
         "level": 9,
         "experience": 90
       },
       {
-        "playerId": "2",
+        "playerId": "_id",
         "pokemonId": 5,
         "nickname": "Puff",
         "level": 7,
         "experience": 70
       },
       {
-        "playerId": "2",
+        "playerId": "_id",
         "pokemonId": 1,
         "nickname": "Sparkle",
         "level": 11,
         "experience": 110
       },
       {
-        "playerId": "3",
+        "playerId": "_id",
         "pokemonId": 2,
         "nickname": "Leaf",
         "level": 9,
         "experience": 90
       },
       {
-        "playerId": "3",
+        "playerId": "_id",
         "pokemonId": 3,
         "nickname": "Blaze",
         "level": 13,
         "experience": 130
       },
       {
-        "playerId": "3",
+        "playerId": "_id",
         "pokemonId": 4,
         "nickname": "Squirt",
         "level": 10,
         "experience": 100
       },
       {
-        "playerId": "4",
+        "playerId": "_id"
         "pokemonId": 5,
         "nickname": "Jiggy",
         "level": 8,
         "experience": 80
       },
       {
-        "playerId": "4",
+        "playerId": "_id",
         "pokemonId": 1,
         "nickname": "Thunder",
         "level": 12,
         "experience": 120
       },
       {
-        "playerId": "4",
+        "playerId": "_id",
         "pokemonId": 2,
         "nickname": "Vine",
         "level": 10,
         "experience": 100
       },
       {
-        "playerId": "5",
+        "playerId": "_id",
         "pokemonId": 3,
         "nickname": "Inferno",
         "level": 11,
         "experience": 110
       },
       {
-        "playerId": "5",
+        "playerId": "_id",
         "pokemonId": 4,
         "nickname": "Aqua",
         "level": 12,
         "experience": 120
       },
       {
-        "playerId": "5",
+        "playerId": "_id",
         "pokemonId": 5,
         "nickname": "Melody",
         "level": 9,
