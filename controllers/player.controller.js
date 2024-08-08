@@ -7,7 +7,7 @@ import hashPassword from "../utils/hashPassword.js";
 const playerController = {
   Register: async (req, res) => {
     try {
-      const { name, email, password, address } = req.body;
+      const { id, name, email, password, address } = req.body;
 
       // Check if Player already exists
       const existingPlayer = await player.findOne({ email });
@@ -16,7 +16,7 @@ const playerController = {
       }
       const hashedPassword = await hashPassword(password);
 
-      const players = await player.create({ name, email, password: hashedPassword, address });
+      const players = await player.create({ id, name, email, password: hashedPassword, address });
       res.status(200).json({ message: "Player has been created successfully", player: players });
     } catch (err) {
       res.status(500).send(err.message);
@@ -40,8 +40,8 @@ const playerController = {
         return res.status(401).json({ message: "no player found" });
       }
       console.log(players);
-      if (!players._id) {
-        console.error("Player object does not have an _id property:", players);
+      if (!players.id) {
+        console.error("Player object does not have an id property:", players);
         return res.status(500).json({ message: "Server error: Invalid player data" });
       }
       // Check password
@@ -52,8 +52,8 @@ const playerController = {
       }
 
       // Generate JWT
-      const token = jwt.sign({ id: players._id.toString() }, process.env.TOKEN_ACCESS_SECRET, { expiresIn: "1h" });
-      console.log("Generated token payload:", { id: players._id.toString() });
+      const token = jwt.sign({ id: players.id.toString() }, process.env.TOKEN_ACCESS_SECRET, { expiresIn: "1h" });
+      console.log("Generated token payload:", { id: players.id.toString() });
       // Set cookie
       res.cookie("token", token, {
         httpOnly: true,
@@ -62,7 +62,7 @@ const playerController = {
         maxAge: 3600000, // 1 hour
       });
 
-      res.json({ message: "Login successful", playerId: players._id, token: token });
+      res.json({ message: "Login successful", playerId: players.id, token: token });
     } catch (error) {
       console.error("Login error:", error);
       res.status(500).json({ message: "Internal server error" });

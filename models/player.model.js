@@ -1,8 +1,15 @@
 import mongoose, { model } from "mongoose";
+
 const Schema = mongoose.Schema;
 
 const playerSchema = new Schema(
   {
+    id: {
+      type: Number,
+      required: true,
+      unique: true,
+      index: true,
+    },
     name: {
       type: String,
       required: [true, "Please enter player name"],
@@ -30,7 +37,6 @@ const playerSchema = new Schema(
     timestamps: true,
   }
 );
-
 const player = mongoose.model("Player", playerSchema);
 
 export default player;

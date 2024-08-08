@@ -1,4 +1,5 @@
 import mongoose, { model } from "mongoose";
+
 const Schema = mongoose.Schema;
 
 const pokemonSchema = new Schema({
@@ -6,6 +7,7 @@ const pokemonSchema = new Schema({
     type: Number,
     required: true,
     unique: true,
+    index: true,
   },
   name: {
     type: String,
@@ -25,6 +27,5 @@ const pokemonSchema = new Schema({
     },
   ],
 });
-
 const pokemon = mongoose.model("pokemon", pokemonSchema);
 export default pokemon;

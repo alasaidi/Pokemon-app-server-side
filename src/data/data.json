@@ -1,6 +1,7 @@
 {
     "players": [
       {
+        "id": 1,
         "name": "Ash Ketchum",
         "email": "ash.ketchum@example.com",
         "password": "password123",
@@ -10,6 +11,7 @@
         }
       },
       {
+        "id": 2,
         "name": "Misty Williams",
         "email": "misty.williams@example.com",
         "password": "password123",
@@ -19,6 +21,7 @@
         }
       },
       {
+        "id": 3,
         "name": "Brock Harrison",
         "email": "brock.harrison@example.com",
         "password": "password123",
@@ -28,6 +31,7 @@
         }
       },
       {
+        "id": 4,
         "name": "Gary Oak",
         "email": "gary.oak@example.com",
         "password": "password123",
@@ -37,6 +41,7 @@
         }
       },
       {
+        "id": 5,
         "name": "Tracey Sketchit",
         "email": "tracey.sketchit@example.com",
         "password": "password123",
@@ -51,125 +56,125 @@
         "id": 1,
         "name": "Pikachu",
         "type": ["Electric"],
-        "picture": "https://example.com/pikachu.png",
+"picture": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
         "abilities": ["Static", "Lightning Rod"]
       },
       {
         "id": 2,
         "name": "Bulbasaur",
         "type": ["Grass", "Poison"],
-        "picture": "https://example.com/bulbasaur.png",
+        "picture": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
         "abilities": ["Overgrow", "Chlorophyll"]
       },
       {
         "id": 3,
         "name": "Charmander",
         "type": ["Fire"],
-        "picture": "https://example.com/charmander.png",
+        "picture": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
         "abilities": ["Blaze", "Solar Power"]
       },
       {
         "id": 4,
         "name": "Squirtle",
         "type": ["Water"],
-        "picture": "https://example.com/squirtle.png",
+        "picture": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
         "abilities": ["Torrent", "Rain Dish"]
       },
       {
         "id": 5,
         "name": "Jigglypuff",
         "type": ["Normal", "Fairy"],
-        "picture": "https://example.com/jigglypuff.png",
+        "picture": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/39.png",
         "abilities": ["Cute Charm", "Competitive"]
       }
     ],
     "playerPokemons": [
       {
-        "playerId": "_id",
+        "playerId": 1,
         "pokemonId": 1,
         "nickname": "Sparky",
         "level": 10,
         "experience": 100
       },
       {
-        "playerId": "_id",
+        "playerId": 1,
         "pokemonId": 2,
         "nickname": "Bulby",
         "level": 8,
         "experience": 80
       },
       {
-        "playerId": "_id",
+        "playerId": 1,
         "pokemonId": 3,
         "nickname": "Flame",
         "level": 12,
         "experience": 120
       },
       {
-        "playerId": "_id",
+        "playerId": 1,
         "pokemonId": 4,
         "nickname": "Shell",
         "level": 9,
         "experience": 90
       },
       {
-        "playerId": "_id",
+        "playerId": 1,
         "pokemonId": 5,
         "nickname": "Puff",
         "level": 7,
         "experience": 70
       },
       {
-        "playerId": "_id",
+        "playerId": 2,
         "pokemonId": 1,
         "nickname": "Sparkle",
         "level": 11,
         "experience": 110
       },
       {
-        "playerId": "_id",
+        "playerId": 2,
         "pokemonId": 2,
         "nickname": "Leaf",
         "level": 9,
         "experience": 90
       },
       {
-        "playerId": "_id",
+        "playerId": 2,
         "pokemonId": 3,
         "nickname": "Blaze",
         "level": 13,
         "experience": 130
       },
       {
-        "playerId": "_id",
+        "playerId": 2,
         "pokemonId": 4,
         "nickname": "Squirt",
         "level": 10,
         "experience": 100
       },
       {
-        "playerId": "_id"
+        "playerId": 2,
         "pokemonId": 5,
         "nickname": "Jiggy",
         "level": 8,
         "experience": 80
       },
       {
-        "playerId": "_id",
+        "playerId": 3,
         "pokemonId": 1,
         "nickname": "Thunder",
         "level": 12,
         "experience": 120
       },
       {
-        "playerId": "_id",
+        "playerId": 3,
         "pokemonId": 2,
         "nickname": "Vine",
         "level": 10,
         "experience": 100
       },
       {
-        "playerId": "_id",
+        "playerId": 3,
         "pokemonId": 3,
         "nickname": "Inferno",
         "level": 11,

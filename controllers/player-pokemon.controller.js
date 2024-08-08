@@ -7,9 +7,14 @@ const playerPokemonController = {
   assignPokemon: async (req, res) => {
     try {
       const { playerId, pokemonId, nickname, level, experience } = req.body;
+      if (!playerId) {
+        return res.status(400).json({ message: "playerId is required" });
+      }
 
       // Check if player exists
+
       const playerExists = await Player.findById(playerId);
+      console.log(playerId);
       if (!playerExists) {
         return res.status(404).json({ message: "Player not found" });
       }
