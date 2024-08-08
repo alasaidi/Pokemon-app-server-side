@@ -38,7 +38,7 @@ const pokemonController = {
       const { id } = req.params;
       const { name } = req.body;
 
-      const result = await pokemon.updateOne({ _id: id }, { $set: { name: name } });
+      const result = await pokemon.updateOne({ id: id }, { $set: { name: name } });
       res.status(200).json(result);
     } catch (err) {
       res.status(500).send(err.message);
@@ -51,7 +51,7 @@ const pokemonController = {
         // User is logged in, get their Pokémon
         console.log("Entire req.user object:", req.user);
         console.log("User ID:", req.user.id);
-        const playerPokemons = await playerPokemon.find({ playerId: req.user.id }).populate("pokemonId");
+        const playerPokemons = await playerPokemon.find({ playerId: req.user.id }).populate("playerId").populate("pokemonId").lean();
         res.status(200).json(playerPokemons);
       } else {
         // No user logged in, get all Pokémon
@@ -65,7 +65,7 @@ const pokemonController = {
   // get pokemon by id
   selectpokemonById: async (req, res) => {
     try {
-      const pokemons = await pokemon.find({ _id: req.params.id });
+      const pokemons = await pokemon.find({ id: req.params.id });
 
       res.status(200).json(pokemons);
     } catch (err) {
