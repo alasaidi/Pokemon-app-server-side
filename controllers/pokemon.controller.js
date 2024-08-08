@@ -51,8 +51,20 @@ const pokemonController = {
         // User is logged in, get their Pokémon
         console.log("Entire req.user object:", req.user);
         console.log("User ID:", req.user.id);
-        const playerPokemons = await playerPokemon.find({ playerId: req.user.id }).populate("playerId").populate("pokemonId").lean();
-        res.status(200).json(playerPokemons);
+        const playerId = Number(req.user.id);
+        console.log("player id: ", req.user.id, typeof playerId);
+        const playerPokemons = await playerPokemon.find({ playerId: playerId }).lean();
+        // Fetch details for Pokémon if needed
+        const pokemonIds = playerPokemons.map((pp) => pp.pokemonId);
+        const pokemons = await pokemon.find({ id: { $in: pokemonIds } }).lean();
+
+        // Add Pokémon details to PlayerPokemons
+        const detailedPlayerPokemons = playerPokemons.map((pp) => ({
+          ...pp,
+          pokemon: pokemons.find((p) => p.id === pp.pokemonId),
+        }));
+
+        res.status(200).json(detailedPlayerPokemons);
       } else {
         // No user logged in, get all Pokémon
         const allPokemon = await pokemon.find();

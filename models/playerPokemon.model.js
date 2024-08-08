@@ -17,5 +17,5 @@ const playerPokemonSchema = new Schema({
   experience: { type: Number, default: 0 },
 });
 
-const playerPokemon = mongoose.model("playerPokemon", playerPokemonSchema);
+const playerPokemon = mongoose.model("PlayerPokemon", playerPokemonSchema);
 export default playerPokemon;
