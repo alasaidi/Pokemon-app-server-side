@@ -1,6 +1,7 @@
 import PlayerPokemon from "../models/playerPokemon.model.js";
 import Player from "../models/player.model.js";
 import Pokemon from "../models/pokemon.model.js";
+import mongoose from "mongoose";
 
 const playerPokemonController = {
   // Assign a Pokémon to a player
@@ -12,12 +13,12 @@ const playerPokemonController = {
       }
 
       // Check if player exists
-
-      const playerExists = await Player.findById(playerId);
-      console.log(playerId);
-      if (!playerExists) {
-        return res.status(404).json({ message: "Player not found" });
-      }
+      // const objectIdPlayerId = new mongoose.Types.ObjectId(playerId);
+      // const playerExists = await Player.findById(objectIdPlayerId);
+      // console.log(playerId);
+      // if (!playerExists) {
+      //   return res.status(404).json({ message: "Player not found" });
+      // }
 
       // Check if Pokémon exists
       const pokemonExists = await Pokemon.findOne({ id: pokemonId });
