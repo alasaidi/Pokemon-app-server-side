@@ -122,3 +122,7 @@ The server will start on the port specified in your `.env` file.
 Note: Make sure you have MongoDB set up and running before starting the server.
 
 The `data.json` file in the root directory contains example data that you can use for testing the application.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
